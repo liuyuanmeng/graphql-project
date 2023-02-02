@@ -6,17 +6,33 @@ type Movie {
     title: String!
     rating: Float!
     year: Int!
+    reviews: [Review]
+  
   }
+type Review {
+    comment: String
+    createAt: String
+    createBy: String
+   
 
-  type Query {
+}
+
+
+type Query {
     getMovies: [Movie!]!,
     getMovie(id: ID!): Movie!
+   
   }
 
-  type Mutation {
+type Mutation {
     createMovie(title: String!, rating: Float!, year: Int!): Movie!
     deleteMovie(id: ID!): Movie
-    updateMovie(id: ID!, title: String, rating: Float, year: Int): Movie!
+    updateMovie(id: ID!, title: String, rating: Float, year: Int!): Movie!
+
+   
+
+   
+
   }
 
 
